@@ -6,25 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public TMP_Text HScore;
-    public TMP_Text time;
+    [Header("Score Labels")]
+    public TMP_Text l1HighText;
+    public TMP_Text l1TimeText;
+    public TMP_Text l2HighText;
+    public TMP_Text l2TimeText;
+
+    [Header("Scene Names")]
+    public string level1Scene = "Level1";
+    public string innovationScene = "InnovationScene";
     // Start is called before the first frame update
     void Start()
     {
-        //读取上次分数和时间
-        int lastScore = PlayerPrefs.GetInt("HighScore", 0);
-        float lastTime = PlayerPrefs.GetFloat("LastTime", 0f);
+        int l1hs = PlayerPrefs.GetInt("L1_HS", 0);
+        string l1time = PlayerPrefs.GetString("L1_TIME", "00:00:00");
+        int l2hs = PlayerPrefs.GetInt("L2_HS", 0);
+        string l2time = PlayerPrefs.GetString("L2_TIME", "00:00:00");
 
-        HScore.text = "Last High Score: " + lastScore.ToString();
-        time.text = "Last Time: " + lastTime.ToString("0.0") + "s";
+        if (l1HighText) l1HighText.text = $"L1 High: {l1hs:000000}";
+        if (l1TimeText) l1TimeText.text = $"L1 Time: {l1time}";
+        if (l2HighText) l2HighText.text = $"L2 High: {l2hs:000000}";
+        if (l2TimeText) l2TimeText.text = $"L2 Time: {l2time}";
     }
-    public void LoadLevel1()
+    public void LoadLv1()
     {
         SceneManager.LoadScene("Level1");
     }
 
     // Level 2 按钮事件
-    public void LoadLevel2()
+    public void LoadLv2()
     {
         SceneManager.LoadScene("InnovationScene");
     }
