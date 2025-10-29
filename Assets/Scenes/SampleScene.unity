@@ -4009,6 +4009,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2716276087204451869, guid: b526a7c55a2c1bc42afc2efa70fc2183, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 429619a7f0bc7054a8c1467dcba323d4, type: 2}
     - target: {fileID: 8249393276688036157, guid: b526a7c55a2c1bc42afc2efa70fc2183, type: 3}
       propertyPath: m_Name
       value: Ghost_red_you_0
